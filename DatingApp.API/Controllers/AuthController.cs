@@ -59,7 +59,7 @@ namespace DatingApp.API.Controllers
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
                 new Claim(ClaimTypes.Name, userFromRepo.Username)
             };
-            // Now in order to make sure the otkens are valid token when it comes back, the server needs to sign this token,
+            // Now in order to make sure the tokens are valid token when it comes back, the server needs to sign this token,
             // and here, we are creating a security key and then using this key as part of the signing credentials and encrypted this key with a hashing algorithm
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
 
